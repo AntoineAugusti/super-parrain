@@ -1,0 +1,26 @@
+name: CI
+
+on:
+ push:
+ schedule:
+   cron: "5,15,25,35,45,55 7-22 * * *"
+   branches:
+     - master
+
+jobs:
+  build:
+    name: Log in to website and browse
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+          architecture: x64
+      - name: Pip install
+        run: pip install -r requirements.txt
+      - name: Log in and browse
+        run: python main.py
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}

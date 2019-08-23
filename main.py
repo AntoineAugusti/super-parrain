@@ -15,6 +15,9 @@ def random_sleep():
 BASE = "https://www.super-parrain.com"
 
 s = requests.Session()
+s.headers = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
+}
 resp = s.get(f"{BASE}/login")
 resp.raise_for_status()
 

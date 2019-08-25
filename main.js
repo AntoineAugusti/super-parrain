@@ -12,11 +12,9 @@ const puppeteer = require('puppeteer');
 
   await page.waitForNavigation();
   console.log('New Page URL:', page.url());
-  console.log(await page.content());
   await page.waitFor(10000);
 
   await page.goto("https://www.super-parrain.com/offres/habitation/parrainage-planete-oui");
-  await page.waitForNavigation();
   console.log('New Page URL:', page.url());
   await page.waitFor(10000);
 

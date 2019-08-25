@@ -12,11 +12,19 @@ const puppeteer = require('puppeteer');
 
   await page.waitForNavigation();
   console.log('New Page URL:', page.url());
-  await page.waitFor(10000);
+  await page.waitFor(70000);
 
   await page.goto("https://www.super-parrain.com/offres/habitation/parrainage-planete-oui");
   console.log('New Page URL:', page.url());
-  await page.waitFor(10000);
+  await page.waitFor(70000);
+
+  await page.goto("https://www.super-parrain.com/offres/assurance/parrainage-alan");
+  console.log('New Page URL:', page.url());
+  await page.waitFor(70000);
+
+  await page.goto("https://www.super-parrain.com/users/antoinea");
+  console.log('New Page URL:', page.url());
+  await page.waitFor(70000);
 
   await browser.close();
 })();

@@ -26,7 +26,7 @@ workflows:
   cron:
     triggers:
       - schedule:
-          cron: "5,15,25,35,45,55 6-22 * * *"
+          cron: "*/5 6-22 * * *"
           filters:
             branches:
               only:
